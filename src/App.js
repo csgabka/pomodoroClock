@@ -87,6 +87,10 @@ class App extends React.Component {
           (this.state.display === "Session")){
           let sound = document.getElementById('beep');
           sound.play();
+          setTimeout(function() {
+            var snd = new Audio("http://www.pacdv.com/sounds/interface_sound_effects/sound107.wav");
+            snd.play();
+          }, 2000);
           this.setState({display: "Break"});
           this.setState({convertedRemainingTime: this.state.breakLength + ":00"}, () => {
           let time = this.state.convertedRemainingTime.split(":");
@@ -98,7 +102,7 @@ class App extends React.Component {
           let sound = document.getElementById('beep');
           sound.play();
           setTimeout(function() {
-            var snd = new Audio("http://www.pacdv.com/sounds/interface_sound_effects/sound106.wav");
+            var snd = new Audio("http://www.pacdv.com/sounds/interface_sound_effects/sound107.wav");
             snd.play();
           }, 2000);
           this.setState({display: "Session"});
