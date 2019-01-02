@@ -111,8 +111,6 @@ class App extends React.Component {
 
       }
 
-
-      
       startOrStop = (event) => {
         if (this.state.timerStatus === "stopped") {
           this.setState({timerStatus: "started"});
