@@ -97,6 +97,10 @@ class App extends React.Component {
           (this.state.display === "Break")){
           let sound = document.getElementById('beep');
           sound.play();
+          setTimeout(function() {
+            var snd = new Audio("http://www.pacdv.com/sounds/interface_sound_effects/sound106.wav");
+            snd.play();
+          }, 2000);
           this.setState({display: "Session"});
           this.setState({convertedRemainingTime: this.state.sessionLength + ":00"}, () => {
           let time = this.state.convertedRemainingTime.split(":");
