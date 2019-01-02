@@ -114,7 +114,7 @@ class App extends React.Component {
       startOrStop = (event) => {
         if (this.state.timerStatus === "stopped") {
           this.setState({timerStatus: "started"});
-          let intervalId = setInterval(this.startTimer, 50);
+          let intervalId = setInterval(this.startTimer, 1000);
           this.setState({ intervalId: intervalId })
         }
         else if (this.state.timerStatus === "started") {
