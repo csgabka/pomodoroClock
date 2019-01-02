@@ -86,11 +86,7 @@ class App extends React.Component {
         if ((this.state.minute === 0) && (this.state.second === 0) &&
           (this.state.display === "Session")){
           let sound = document.getElementById('beep');
-          sound.play();
-          setTimeout(function() {
-            var snd = new Audio("http://www.pacdv.com/sounds/interface_sound_effects/sound107.wav");
-            snd.play();
-          }, 2000);
+          sound.addEventListener("ended", sound.play());
           this.setState({display: "Break"});
           this.setState({convertedRemainingTime: this.state.breakLength + ":00"}, () => {
           let time = this.state.convertedRemainingTime.split(":");
@@ -100,11 +96,7 @@ class App extends React.Component {
         if ((this.state.minute === 0) && (this.state.second === 0) &&
           (this.state.display === "Break")){
           let sound = document.getElementById('beep');
-          sound.play();
-          setTimeout(function() {
-            var snd = new Audio("http://www.pacdv.com/sounds/interface_sound_effects/sound107.wav");
-            snd.play();
-          }, 2000);
+          sound.addEventListener("ended", sound.play());
           this.setState({display: "Session"});
           this.setState({convertedRemainingTime: this.state.sessionLength + ":00"}, () => {
           let time = this.state.convertedRemainingTime.split(":");
@@ -124,7 +116,7 @@ class App extends React.Component {
       startOrStop = (event) => {
         if (this.state.timerStatus === "stopped") {
           this.setState({timerStatus: "started"});
-          let intervalId = setInterval(this.startTimer, 1000);
+          let intervalId = setInterval(this.startTimer, 100);
           this.setState({ intervalId: intervalId })
         }
         else if (this.state.timerStatus === "started") {
