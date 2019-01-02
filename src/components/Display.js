@@ -16,7 +16,7 @@ class Display extends React.Component {
         </div>
         <i className="far fa-play-circle fa-2x" id="start_stop" onClick={this.props.startOrStop}></i>
         <i className="fas fa-redo fa-2x" id="reset" onClick={this.props.reset}></i>
-        <audio id="beep" src="http://www.pacdv.com/sounds/interface_sound_effects/sound106.wav"/>
+        <audio id="beep" src="http://www.pacdv.com/sounds/interface_sound_effects/sound106.wav"></audio>
         </div>
         </div>
            );
