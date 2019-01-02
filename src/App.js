@@ -85,7 +85,8 @@ class App extends React.Component {
       startTimer = () => {
         if ((this.state.minute === 0) && (this.state.second === 0) &&
           (this.state.display === "Session")){
-          document.getElementById('beep').play();
+          let sound = document.getElementById('beep');
+          sound.play();
           this.setState({display: "Break"});
           this.setState({convertedRemainingTime: this.state.breakLength + ":00"}, () => {
           let time = this.state.convertedRemainingTime.split(":");
@@ -94,7 +95,8 @@ class App extends React.Component {
         }
         if ((this.state.minute === 0) && (this.state.second === 0) &&
           (this.state.display === "Break")){
-          document.getElementById('beep').play();
+          let sound = document.getElementById('beep');
+          sound.play();
           this.setState({display: "Session"});
           this.setState({convertedRemainingTime: this.state.sessionLength + ":00"}, () => {
           let time = this.state.convertedRemainingTime.split(":");
