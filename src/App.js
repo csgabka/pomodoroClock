@@ -85,8 +85,8 @@ class App extends React.Component {
       startTimer = () => {
         if ((this.state.minute === 0) && (this.state.second === 0) &&
           (this.state.display === "Session")){
-          let sound = new Audio("http://www.pacdv.com/sounds/interface_sound_effects/sound106.wav");
-          sound.addEventListener("touchstart", sound.play(() => alert("plays")));
+          let sound = new Audio("http://www.pacdv.com/sounds/interface_sound_effects/sound105.wav");
+          sound.addEventListener("touchstart", sound.play();
           this.setState({display: "Break"});
           this.setState({convertedRemainingTime: this.state.breakLength + ":00"}, () => {
           let time = this.state.convertedRemainingTime.split(":");
@@ -95,8 +95,8 @@ class App extends React.Component {
         }
         if ((this.state.minute === 0) && (this.state.second === 0) &&
           (this.state.display === "Break")){
-          let sound = new Audio("http://www.pacdv.com/sounds/interface_sound_effects/sound106.wav");
-          sound.addEventListener("touchstart", sound.play(() => alert("plays")));
+          let sound = new Audio("http://www.pacdv.com/sounds/interface_sound_effects/sound105.wav");
+          sound.addEventListener("touchstart", sound.play();
           this.setState({display: "Session"});
           this.setState({convertedRemainingTime: this.state.sessionLength + ":00"}, () => {
           let time = this.state.convertedRemainingTime.split(":");
